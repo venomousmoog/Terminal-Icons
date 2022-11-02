@@ -26,10 +26,9 @@ https://github.com/DHowett/DirColors -->
                                     <Text AssemblyName="System.Management.Automation" BaseName="FileSystemProviderStrings" ResourceId="DirectoryDisplayGrouping"/>
                                     <ExpressionBinding>
                                         <ScriptBlock>
-                                                  $_.PSParentPath.Replace("Microsoft.PowerShell.Core\FileSystem::", "")
+                                            $_.PSParentPath.Replace("Microsoft.PowerShell.Core\FileSystem::", "")
                                         </ScriptBlock>
                                     </ExpressionBinding>
-                                    <NewLine/>
                                 </CustomItem>
                             </Frame>
                         </CustomItem>

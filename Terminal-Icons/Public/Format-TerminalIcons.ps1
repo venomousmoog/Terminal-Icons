@@ -33,10 +33,14 @@ function Format-TerminalIcons {
 
     process {
         $displayInfo = Resolve-Icon $FileInfo
+        $tag = ""
+        if ($FileInfo.PSIsContainer) {
+            $tag = "/"
+        }
         if ($displayInfo.Icon) {
-            "$($displayInfo.Color)$($displayInfo.Icon)  $($FileInfo.Name)$($displayInfo.Target)$($script:colorReset)"
+            "$($displayInfo.Color)$($displayInfo.Icon) $($FileInfo.Name)$($tag)$($displayInfo.Target)$($script:colorReset)"
         } else {
-            "$($displayInfo.Color)$($FileInfo.Name)$($displayInfo.Target)$($script:colorReset)"
+            "$($displayInfo.Color)$($FileInfo.Name)$($tag)$($displayInfo.Target)$($script:colorReset)"
         }
     }
 }

@@ -56,8 +56,12 @@ function Add-Theme {
                                 $script:colorSequences[$theme.Name] = New-EmptyColorTheme
                             }
 
-                            # Directories
+                            # WellKnown Directories
                             $theme.Types.Directories.WellKnown.GetEnumerator().ForEach({
+                                $script:colorSequences[$theme.Name].Types.Directories.WellKnown[$_.Name] = ConvertFrom-RGBColor -RGB $_.Value
+                            })
+                            # Other directories
+                            $theme.Types.Directories.GetEnumerator().Where({$_.Name -ne 'WellKnown'}).ForEach({
                                 $script:colorSequences[$theme.Name].Types.Directories[$_.Name] = ConvertFrom-RGBColor -RGB $_.Value
                             })
                             # Wellknown files

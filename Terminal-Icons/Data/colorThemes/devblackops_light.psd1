@@ -2,6 +2,7 @@
   Name  = 'devblackops_light'
   Types = @{
     Directories = @{
+      '' = 'FF00FF'
       symlink  = '7373ff'
       junction = '7373ff'
       WellKnown = @{

@@ -210,5 +210,23 @@ https://github.com/DHowett/DirColors -->
                 </WideEntries>
             </WideControl>
         </View>
+    <View>
+      <Name>PathInfo</Name>
+      <ViewSelectedBy>
+        <TypeName>System.Management.Automation.PathInfo</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <HideTableHeaders>true</HideTableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>Terminal-Icons\Format-TerminalIcons $_</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
     </ViewDefinitions>
 </Configuration>

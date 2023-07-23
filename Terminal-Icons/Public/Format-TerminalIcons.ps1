@@ -6,6 +6,8 @@ function Format-TerminalIcons {
         Take the provided file or folder object and look up the appropriate icon and color to display.
     .PARAMETER FileInfo
         The file or folder to display
+    .PARAMETER Wide
+        Whether to format shorter for wide output
     .EXAMPLE
         Get-ChildItem
 
@@ -34,13 +36,25 @@ function Format-TerminalIcons {
     process {
         $displayInfo = Resolve-Icon $FileInfo
         $tag = ""
-        if ($FileInfo.PSIsContainer) {
+        if ($Wide -and -not [System.String]::IsNullOrWhiteSpace($displayInfo.Target)) {
+            $tag = "@"
+        }
+        elseif ($FileInfo.PSIsContainer) {
             $tag = "/"
         }
-        if ($displayInfo.Icon) {
-            "$($displayInfo.Color)$($displayInfo.Icon) $($FileInfo.Name)$($tag)$($displayInfo.Target)$($script:colorReset)"
-        } else {
-            "$($displayInfo.Color)$($FileInfo.Name)$($tag)$($displayInfo.Target)$($script:colorReset)"
+        if ($Wide) {
+            if ($displayInfo.Icon) {
+                "$($displayInfo.Color)$($displayInfo.Icon) $($FileInfo.Name)$($tag)$($script:colorReset)"
+            } else {
+                "$($displayInfo.Color)$($FileInfo.Name)$($tag)$($script:colorReset)"
+            }
+        }
+        else {
+            if ($displayInfo.Icon) {
+                "$($displayInfo.Color)$($displayInfo.Icon) $($FileInfo.Name)$($tag)$($displayInfo.Target)$($script:colorReset)"
+            } else {
+                "$($displayInfo.Color)$($FileInfo.Name)$($tag)$($displayInfo.Target)$($script:colorReset)"
+            }
         }
     }
 }

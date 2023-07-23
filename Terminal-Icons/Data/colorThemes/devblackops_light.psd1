@@ -9,9 +9,13 @@
         docs                    = '00BFFF'
         documents               = '00BFFF'
         desktop                 = '00c9cd'
+        benchmark               = 'F08519'
+        demo                    = '5F3EC3'
+        samples                 = '5F3EC3'
         contacts                = '00c9cd'
         apps                    = 'FF143C'
         applications            = 'FF143C'
+        artifacts               = 'D49653'
         shortcuts               = 'FF143C'
         links                   = 'FF143C'
         fonts                   = 'DC143C'
@@ -33,6 +37,7 @@
         windows                 = '00A8E8'
         users                   = 'F4F4F4'
         favorites               = 'F7D72C'
+        output                  = '00cd65'
         '.config'               = '87CEAF'
         '.cache'                = '87ECAF'
         '.vscode'               = '87CEFA'
@@ -527,6 +532,9 @@
       '.tfvars'               = '948EEC'
       '.auto.tfvars'          = '948EEC'
 
+      # Bicep
+      '.bicep'                = '00BFFF'
+
       # Disk Image
       '.vmdk'                 = 'a9afb8'
       '.vhd'                  = 'a9afb8'
@@ -544,6 +552,17 @@
 
       # Vim
       '.vim'                  = '019833'
+
+      # Puppet
+      '.pp'                   = 'FFA61A'
+      '.epp'                  = 'FFA61A'
+
+      # Scala
+      '.scala'                = 'DE3423'
+      '.sc'                   = 'DE3423'
+
+      # Autodesk Inventor
+      '.iLogicVb'             = 'A63B22'
     }
   }
 }
